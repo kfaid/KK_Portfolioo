@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Krushil Desai | AI Engineer & Data Scientist{% endblock %}</title>
+
+    <!-- Favicon (Emoji Favicon as standard fallback) -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <!-- Bootstrap 5 Grid & Utilities ONLY -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-grid.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap-utilities.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom Style CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <!-- Cinematic Loader Overlay -->
+    <div id="loader" class="loader-overlay" aria-hidden="true">
+        <div class="loader-content">
+            <div class="loader-counter"><span id="loader-num">000</span>%</div>
+            <div class="loader-bar-wrapper">
+                <div class="loader-bar"></div>
+            </div>
+            <div class="loader-text">
+                <span class="loader-word">INTELLIGENCE</span>
+                <span class="loader-word">DATA</span>
+                <span class="loader-word">CREATIVITY</span>
+            </div>
+        </div>
+        <div class="loader-slide slide-1"></div>
+        <div class="loader-slide slide-2"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+    <div class="custom-cursor cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+    <!-- Minimalistic Awwwards Header -->
+    <header class="minimal-nav" aria-label="Main Navigation">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo" data-cursor-magnetic>
+                <span>K.DESAI</span>
+            </a>
+
+            <nav class="nav-links-wrapper">
+                <ul class="nav-links-list">
+                    <li><a href="#about" data-cursor-magnetic>WHO</a></li>
+                    <li><a href="#journey" data-cursor-magnetic>JOURNEY</a></li>
+                    <li><a href="#work" data-cursor-magnetic>WORK</a></li>
+                    <li><a href="#skills" data-cursor-magnetic>SKILLS</a></li>
+                    <li><a href="#contact" data-cursor-magnetic>CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-right">
+                <a href="{{ url_for('static', filename='resume/Krushil_Resume.pdf') }}" class="nav-resume-btn"
+                    download="Krushil_Desai_Resume.pdf" data-cursor-magnetic>
+                    RESUME
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Scrollable Content Area -->
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+            <main>
+                {% block content %}{% endblock %}
+            </main>
+
+            <!-- Minimal Editorial Footer -->
+            <footer class="editorial-footer">
+                <div class="container-fluid py-5">
+                    <div class="row align-items-center justify-content-between gy-4">
+                        <div class="col-md-4 text-center text-md-start">
+                            <span class="footer-logo-text">KRUSHIL DESAI</span>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <span class="footer-copyright">&copy; 2026. ALL RIGHTS RESERVED.</span>
+                        </div>
+                        <div class="col-md-4 text-center text-md-end">
+                            <span class="footer-credit">AWWWARDS-INSPIRED DESIGN</span>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Lenis Smooth Scroll -->
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+    <!-- SplitType -->
+    <script src="https://unpkg.com/split-type"></script>
+
+    <!-- Custom Main JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+
+</html>
